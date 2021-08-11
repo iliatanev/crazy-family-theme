@@ -12,7 +12,8 @@ function family_post_types() {
             'name'=> 'Campuses',
             'add_new_item' => 'Add New Campus',
             'edit_item' => 'Edit Campus',
-            'all_items' => 'All Campuses'
+            'all_items' => 'All Campuses',
+            'view_item' => 'View Campus'
         ),
         'menu_icon' => 'dashicons-location-alt'
     ));

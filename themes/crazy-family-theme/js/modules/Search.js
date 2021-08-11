@@ -18,7 +18,7 @@ class Search {
     events() {
         this.openBtn.on( 'click', this.openOverlay.bind(this) );
         this.closeBtn.on( 'click', this.closeOverlay.bind(this) );
-        $(document).on('keyup', this.keyUp.bind('tihs'));
+        $(document).on('keyup', this.keyUp.bind(this));
         this.searchField.on("keydown", this.typingLogic.bind(this));
     }
 

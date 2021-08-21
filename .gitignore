@@ -1,8 +1,8 @@
-/plugins
 /uploads
 /upgrade
+/themes/crazy-family-theme/node_modules
+/themes/fictional-university-theme
 /themes/twentynineteen
 /themes/twentyseventeen
 /themes/twentytwenty
 /themes/index.php
-index.php

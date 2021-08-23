@@ -23,7 +23,32 @@ class WordCountAndTimePlugin {
         // Field for the headline
         add_settings_field( 'wpc_headline', 'Headline', array( $this, 'headlineHTML' ), 'word-count-settings-page', 'wcp_first_section' );
         register_setting( 'wordcountplugin', 'wpc_headline', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => 'Post Statistics' ) );
+
+        // Field for the WordCount
+        add_settings_field( 'wpc_wordcount', 'Word Count', array( $this, 'wordCountHTML' ), 'word-count-settings-page', 'wcp_first_section' );
+        register_setting( 'wordcountplugin', 'wpc_wordcount', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => '1' ) );
+
+        // Field for the Character Count
+        add_settings_field( 'wpc_charcount', 'Character Count', array( $this, 'characterCountHTML' ), 'word-count-settings-page', 'wcp_first_section' );
+        register_setting( 'wordcountplugin', 'wpc_wordcount', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => '1' ) );
+
+        // Field for the Read time
+        add_settings_field( 'wpc_readtime', 'Read time', array( $this, 'readTimeHTML' ), 'word-count-settings-page', 'wcp_first_section' );
+        register_setting( 'wordcountplugin', 'wpc_readtime', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => '1' ) );
     }
+
+    function readTimeHTML() { ?>
+        <input type="checkbox" name="wpc_readtime" value="1" <?php checked( get_option( 'wpc_readtime' ), '1' ); ?>>
+    <?php }
+
+    function characterCountHTML() { ?>
+        <input type="checkbox" name="wpc_charcount" value="1" <?php checked( get_option( 'wpc_charcount' ), '1' ); ?>>
+    <?php }
+
+    // This is the third field 
+    function wordCountHTML() { ?>
+        <input type="checkbox" name="wpc_wordcount" value="1" <?php checked( get_option( 'wpc_wordcount' ), '1' ); ?>>
+    <?php }
 
     // This is handling the second field HTML
     function headlineHTML() { ?>
